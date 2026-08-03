@@ -29,7 +29,7 @@ The task doesn’t currently require a front-end. The website should be fully fu
 
 ## **Architecture**:
 
-**DB schema** ![DB schema](images/structure.png)
+**DB schema** ![DB schema](images/structure_db.png)
 
 ## **Resources**:
 
@@ -73,36 +73,36 @@ The task doesn’t currently require a front-end. The website should be fully fu
 
    - a. Managing the quantity of books (CRUD for Books)
    - b. API:
-        <ol type="I">
+        <ul type="I">
             <li>POST: books/            - add new</li>
             <li>GET: books/             - get a list of books</li>
-            <li>GET: books/<id>/        - get book detail info</li>
-            <li>PUT/PATCH: books/<id>/  - update book (also manage inventory)<li>
-            <li>DELETE: books/<id>/     - delete book</li>
-        </ol>
+            <li>GET: books/{id}/        - get book detail info</li>
+            <li>PUT/PATCH: books/{id}/  - update book (also manage inventory)</li>
+            <li>DELETE: books/{id}/     - delete book</li>
+        </ul>
 
 2. Users Service:
 
    - a. Managing authentication & user registration
    - b. API:
-        <ol type="I">
-            </li>POST: users/                   - register a new user<li>
-            </li>POST: users/token/             - get JWT tokens<li>
-            </li>POST: users/token/refresh/     - refresh JWT token<li>
-            </li>GET: users/me/                 - get my profile info<li>
-            </li>PUT/PATCH: users/me/           - update profile info<li>
-        </ol>
+        <ul type="I">
+            </li>POST: users/                   - register a new user</li>
+            </li>POST: users/token/             - get JWT tokens</li>
+            </li>POST: users/token/refresh/     - refresh JWT token</li>
+            </li>GET: users/me/                 - get my profile info</li>
+            </li>PUT/PATCH: users/me/           - update profile info</li>
+        </ul>
 
 3. Borrowings Service:
 
    - a. Managing users' borrowings of books
    - b. API:
-       <ol type="I">
+       <ul type="I">
            <li>POST: borrowings/    - add new borrowing (when borrow book - inventory should be made -= 1)</li>
            <li>GET: borrowings/?user_id=...&is_active=...   - get borrowings by user id and whether is borrowing still active or not.</li>
            <li>GET: borrowings/<id>/    - get specific borrowing</li>
            <li>POST: borrowings/<id>/return/    - set actual return date (inventory should be made += 1)</li>
-       </ol>
+       </ul>
 
 4. Notifications Service (Telegram):
 
@@ -116,10 +116,10 @@ The task doesn’t currently require a front-end. The website should be fully fu
    - a. Perform payments for book borrowings through the platform.
    - b. Interact with Stripe API using the `stripe` package.
    - c. API:
-        <ol type="I">
-            <li> GET: success/  - check successful stripe payment</li>
+        <ul type="I">
+            <li>GET: success/  - check successful stripe payment</li>
             <li>GET: cancel/    - return payment paused message</li>
-        <ol>
+        <ul>
 
 6. View Service (Delegated to the Front-end Team):
 
