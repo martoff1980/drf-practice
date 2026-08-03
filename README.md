@@ -1,4 +1,6 @@
-# Project Description:
+# Library Service Project
+
+## **Project Description**:
 
 In your city, there’s a library where you can borrow books and pay for your borrowings using cash, depending on how many days it takes you to read the book. The problem is that the library’s system of
 tracking books, borrowings, users, and payments is outdated – everything is done manually and all tracking is performed on paper. There’s no possibility to check the inventory of specific books in the
