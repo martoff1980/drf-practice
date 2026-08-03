@@ -121,7 +121,7 @@ The task doesn’t currently require a front-end. The website should be fully fu
         <ul>
             <li>GET: success/   - check successful stripe payment</li>
             <li>GET: cancel/    - return payment paused message</li>
-        <ul>
+        </ul>
 
 6. View Service (Delegated to the Front-end Team):
 
