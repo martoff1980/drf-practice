@@ -4,15 +4,15 @@ from users.serializers import UserSerializer
 
 
 class CreateUserView(generics.CreateAPIView):
-    """Эндпоинт для регистрации нового пользователя"""
+    """Endpoint for new user registration"""
 
     serializer_class = UserSerializer
-    
+
     permission_classes = (AllowAny,)
 
 
 class ManageUserView(generics.RetrieveUpdateAPIView):
-    """Эндпоинт /users/me/ для просмотра и редактирования своего профиля"""
+    """The /users/me/ endpoint for viewing and editing one's profile"""
 
     serializer_class = UserSerializer
     permission_classes = (IsAuthenticated,)

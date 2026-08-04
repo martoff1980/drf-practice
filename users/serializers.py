@@ -23,11 +23,11 @@ class UserSerializer(serializers.ModelSerializer):
         }
 
     def create(self, validated_data):
-        """Создание пользователя с хешированием пароля"""
+        """Creating a user with password hashing"""
         return get_user_model().objects.create_user(**validated_data)
 
     def update(self, instance, validated_data):
-        """Обновление пользователя с безопасным обновлением пароля"""
+        """User update with secure password update"""
         password = validated_data.pop("password", None)
         user = super().update(instance, validated_data)
 
