@@ -16,7 +16,8 @@ class BookSerializer(serializers.ModelSerializer):
 
 
 class BookListSerializer(serializers.ModelSerializer):
-    """Облегченный сериализатор для списка книг"""
+    """Lightweight serializer for a list of books"""
+
     class Meta:
         model = Book
         fields = ("id", "title", "author", "cover", "inventory", "daily_fee")
