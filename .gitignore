@@ -1,2 +1,6 @@
 venv/
 .env
+
+db.sqlite3
+
+library_service/__pycache__/
