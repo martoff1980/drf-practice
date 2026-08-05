@@ -12,11 +12,19 @@ PAYMENTS_URL = reverse("payments:payment-list")
 
 class PaymentApiTests(APITestCase):
     def setUp(self):
-        self.user1 = User.objects.create_user(email="user1@test.com", password="password")
-        self.user2 = User.objects.create_user(email="user2@test.com", password="password")
-        
+        self.user1 = User.objects.create_user(
+            email="user1@test.com", password="password"
+        )
+        self.user2 = User.objects.create_user(
+            email="user2@test.com", password="password"
+        )
+
         self.book = Book.objects.create(
-            title="Book", author="Author", cover="HARD", inventory=5, daily_fee="2.00"
+            title="Book",
+            author="Author",
+            cover="HARD",
+            inventory=5,
+            daily_fee="2.00"
         )
         self.borrowing1 = Borrowing.objects.create(
             user=self.user1, book=self.book, expected_return_date="2026-08-10"
