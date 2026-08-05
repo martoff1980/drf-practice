@@ -33,7 +33,7 @@ class BorrowingApiTests(APITestCase):
     def test_create_borrowing_decreases_inventory(
         self, mock_stripe, mock_telegram
     ):
-        # Настраиваем мок Stripe
+        # Setup mock Stripe
         mock_stripe.return_value = (
             "http://stripe.com/test", "session_123", 4.50
         )
