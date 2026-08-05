@@ -19,11 +19,18 @@ class BorrowingSerializer(serializers.ModelSerializer):
             "user",
             "is_active",
         )
-        read_only_fields = ("id", "borrow_date", "actual_return_date", "user", "is_active")
+        read_only_fields = (
+            "id",
+            "borrow_date",
+            "actual_return_date",
+            "user",
+            "is_active",
+        )
 
 
 class BorrowingListSerializer(BorrowingSerializer):
-    """Детализированный вывод информации о книге в списке аренд"""
+    """Detailed display of book information in the rental list"""
+
     book = BookSerializer(read_only=True)
 
 
@@ -36,14 +43,19 @@ class BorrowingCreateSerializer(serializers.ModelSerializer):
         data = super().validate(attrs)
         book = attrs["book"]
 
-        # Валидация наличия книги
+        # Validation of book availability
         if book.inventory < 1:
-            raise ValidationError({"book": "К сожалению, этой книги сейчас нет в наличии."})
+            raise ValidationError(
+                {"book": "Unfortunately, this book is currently out of stock."}
+            )
 
-        # Валидация даты возврата
+        # Return date validation
         if attrs["expected_return_date"] <= timezone.now().date():
             raise ValidationError(
-                {"expected_return_date": "Ожидаемая дата возврата должна быть позже сегодняшнего дня."}
+                {
+                    "expected_return_date":
+                        "The expected return date must be later than today."
+                }
             )
 
         return data
@@ -66,5 +78,7 @@ class BorrowingReturnSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         if self.instance.actual_return_date is not None:
-            raise ValidationError({"borrowing": "Эта книга уже была возвращена ранее."})
+            raise ValidationError(
+                {"borrowing": "This book was already returned earlier."}
+            )
         return attrs
