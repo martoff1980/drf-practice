@@ -1,6 +1,6 @@
 # Library Service Project
 
-### **Developer process** ![developer](https://trello.com/b/nP0tKsUc/mate-dfr-practice)
+### **Developer process** [developer](https://trello.com/b/nP0tKsUc/mate-dfr-practice)
 
 ## **Project Description**:
 
