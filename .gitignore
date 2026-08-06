@@ -13,3 +13,4 @@ borrowings/__pycache__/
 borrowings/migrations/__pycache__/
 library_service/__pycache__/
 library_service/migrations/__pycache__/
+notifications/migrations/__pycache__/
