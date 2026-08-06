@@ -3,7 +3,7 @@ from django.conf import settings
 
 
 def send_telegram_message(message: str) -> None:
-    """Отправляет текстовое сообщение в Telegram-чат администраторов."""
+    """Sends a text message to the administrators' Telegram chat."""
     bot_token = settings.TELEGRAM_BOT_TOKEN
     chat_id = settings.TELEGRAM_CHAT_ID
 
@@ -20,4 +20,4 @@ def send_telegram_message(message: str) -> None:
     try:
         requests.post(url, json=payload, timeout=5)
     except requests.RequestException as e:
-        print(f"Ошибка при отправке сообщения в Telegram: {e}")
+        print(f"Error sending message on Telegram: {e}")
