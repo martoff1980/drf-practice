@@ -48,7 +48,6 @@ services:
   celery:
     build: .
     container_name: library_celery
-    # Замените library_service на имя вашего каталога с settings.py
     command: celery -A library_service worker --loglevel=info
     volumes:
       - .:/app
@@ -64,7 +63,6 @@ services:
   celery-beat:
     build: .
     container_name: library_celery_beat
-    # Замените library_service на имя вашего каталога с settings.py
     command: celery -A library_service beat --loglevel=info
     volumes:
       - .:/app
