@@ -28,7 +28,7 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "YOUR_ADMIN_CHAT_ID")
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cp+-uo8yzk92=9-5nyvj)srwxekm0ard(+k48zrq*8)@$2jt%o'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 AUTH_USER_MODEL = "users.User"
 
