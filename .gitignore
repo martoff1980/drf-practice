@@ -1,0 +1,16 @@
+venv/
+.env
+
+db.sqlite3
+
+users/__pycache__/
+users/migrations/__pycache__/
+books/__pycache__/
+books/migrations/__pycache__/
+payments/migrations/__pycache__/
+payments/__pycache__/
+borrowings/__pycache__/
+borrowings/migrations/__pycache__/
+library_service/__pycache__/
+library_service/migrations/__pycache__/
+notifications/migrations/__pycache__/

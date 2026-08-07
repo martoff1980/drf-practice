@@ -1,5 +1,7 @@
 # Library Service Project
 
+### **Developer process** [developer](https://trello.com/b/nP0tKsUc/mate-dfr-practice)
+
 ## **Project Description**:
 
 In your city, there’s a library where you can borrow books and pay for your borrowings using cash, depending on how many days it takes you to read the book. The problem is that the library’s system of
@@ -102,8 +104,8 @@ The task doesn’t currently require a front-end. The website should be fully fu
        <ul>
            <li>POST: borrowings/    - add new borrowing (when borrow book - inventory should be made -= 1)</li>
            <li>GET: borrowings/?user_id=...&is_active=...   - get borrowings by user id and whether is borrowing still active or not.</li>
-           <li>GET: borrowings/<id>/    - get specific borrowing</li>
-           <li>POST: borrowings/<id>/return/    - set actual return date (inventory should be made += 1)</li>
+           <li>GET: borrowings/{id}/    - get specific borrowing</li>
+           <li>POST: borrowings/{id}/return/    - set actual return date (inventory should be made += 1)</li>
        </ul>
 
 4. Notifications Service (Telegram):
